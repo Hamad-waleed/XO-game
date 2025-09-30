@@ -1,71 +1,105 @@
+:root {
+  --box-size: 155px; /* حجم الخانات الافتراضي */
+}
 
-.main{
-    background-color: rgb(101, 164, 222);
-    box-shadow: 1px 1px 5px 5px  rgb(108, 174, 236);
-    margin: auto;
-    width: 155px;
-    margin-top: 100px;
+/* التصميم الأساسي */
+.main {
+  background-color: rgb(101, 164, 222);
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+  margin: auto;
+  width: var(--box-size);
+  margin-top: 50px;
+  padding: 10px;
+  border-radius: 10px;
 }
-.plyer{
-    background-color: rgba(171, 11, 11, 0.605);
-    width: 155px;
-    height: 50px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    margin-top: 10px;
-    border: solid black 1px;
 
+.plyer {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* عمودين */
+  gap: 8px;
+  margin-top: 10px;
+  padding: 10px;
+  background: linear-gradient(135deg, #6fa3ef, #1f4e79);
+  border-radius: 10px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.3);
+  color: #fff;
+  text-align: center;
 }
-.reslt{
-    text-align: center;
-    width: 75px;
-    height: 22px;
-    padding-top: 2px;
 
-}
-.hed{
-    background-color: rgba(171, 11, 11, 0.605);
-    height: 30px;
-    width: 155px;
-    text-align: center;
-    color: rgb(255, 255, 255);
-    font-size: 25px;
-    border: solid black 1px;
-    margin-top: 5px;
-
-}
-.hed:hover{
-    background-color: rgba(109, 7, 7, 0.682);
-
-}
-span{
-    color: wheat;
-}
-.xo{
-    width: 155px;
-    height: 155px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    margin-top: 10px;
-    
-
-}
-.hedar{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 49px;
-    width: 50px;
-    height: 50px;
-    background-color: rgba(171, 11, 11, 0.605);
-    border: solid black 1px;
-    color: white;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+.plyer .reslt {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 10px;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 16px;
 }
 
 
+.reslt {
+  text-align: center;
+  width: 45%;
+  height: 25px;
+  padding-top: 2px;
+  color: white;
+}
+
+.hed {
+  background-color: rgba(171, 11, 11, 0.7);
+  height: 40px;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  font-size: 22px;
+  border: solid black 1px;
+  margin-top: 5px;
+  border-radius: 5px;
+}
+
+.hed:hover {
+  background-color: rgba(109, 7, 7, 0.8);
+}
+
+span {
+  color: wheat;
+}
+
+.xo {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  margin-top: 10px;
+}
+
+.hedar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  aspect-ratio: 1/1; /* يضمن المربعات متساوية الطول والعرض */
+  background-color: rgba(171, 11, 11,0.605);
+  border: solid black 1px;
+  color: white;
+  font-family: 'Gill Sans', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+/* 📱 موبايل */
+@media (max-width: 480px) {
+  :root {
+    --box-size: 90%; /* المربعات تتأقلم مع الشاشة */
+  }
+
+  .main {
+    width: var(--box-size);
+    margin-top: 20px;
+  }
+
+  .hed {
+    font-size: 18px;
+    height: 35px;
+  }
+
+  .hedar {
+    font-size: 1.5rem;
+  }
+}
